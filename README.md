@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# No Surrender: Kart Geliştirme
 
-## Getting Started
+## Proje Amacı
 
-First, run the development server:
+Bu proje, HTML5 tabanlı bir web uygulamasında kullanıcıların çeşitli kartları (silah, kalkan, kitap vb.) seviye atlatmasını ve geliştirmesini sağlayan, oyunlaştırılmış bir sistem sunar. Kullanıcılar, enerji harcayarak kartlarının progress bar'ını doldurur, progress %100 olduğunda kart bir üst seviyeye çıkar. Enerji sınırlı olup zamanla otomatik olarak yenilenir. Amaç, kullanıcıya akıcı, performanslı ve güvenli bir geliştirme deneyimi sunmaktır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Temel Özellikler
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Kartlar üzerinde "Geliştir" butonu ile progress artırma
+- Her tıklamada progress %2 artar ve 1 enerji harcanır
+- Progress %100 olunca kart otomatik seviye atlar, progress sıfırlanır
+- Seviye atlamada enerji harcanmaz
+- Enerji sınırlı ve zamanla otomatik yenilenir
+- Enerji doluysa artmaz, sıfırsa butonlar disable olur
+- Kartlar seviyeye göre filtrelenebilir (tablar)
+- Kart koleksiyonu/katalog ekranı (tüm kartlar ve seviyeleri)
+- Modern ve görsel olarak zengin arayüz
+- Sunucu tarafında rate limit ve input validation ile güvenlik
+- Tüm ana API endpointleri için otomatik testler
+- Veri kalıcılığı (sunucu restart sonrası veri kaybolmaz)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Kullanılan Yapılar ve Teknolojiler
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Next.js**: React tabanlı, SSR destekli modern web framework'ü
+- **React**: Bileşen tabanlı kullanıcı arayüzü
+- **TypeScript**: Tip güvenliği ve daha iyi geliştirme deneyimi için
+- **Tailwind CSS**: Hızlı ve modern arayüz tasarımı için utility-first CSS framework'ü
+- **Node.js (API routes)**: Sunucu tarafı iş mantığı ve veri yönetimi
+- **Dosya tabanlı mock veri**: Kalıcı veri saklama için JSON dosyası
+- **Jest benzeri test scripti (node-fetch)**: API endpointlerinin otomatik test edilmesi
+- **Figma**: UI/UX tasarım referansı
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Klasör Yapısı
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/pages/` : Ana sayfa, API endpointleri ve koleksiyon sayfası
+- `src/components/` : Kart, progress bar, enerji barı gibi UI bileşenleri
+- `src/data/` : Kart ve koleksiyon verileri
+- `src/lib/` : Mock veri yönetimi ve kalıcılık
+- `src/utils/` : Yardımcı fonksiyonlar
+- `scripts/` : Otomatik test scriptleri
 
-## Learn More
+## Nasıl Çalışır?
 
-To learn more about Next.js, take a look at the following resources:
+1. Kullanıcı ana ekranda kartlarını görür, "Geliştir" butonuna tıklar.
+2. Her tıklamada progress artar, enerji harcanır. Progress %100 olunca kart seviye atlar.
+3. Enerji zamanla otomatik olarak yenilenir.
+4. Kullanıcı, üstteki "Koleksiyon" butonuyla tüm kartları ve seviyelerini görebilir.
+5. Tüm API endpointleri otomatik olarak test edilebilir.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Kurulum & Çalıştırma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Bağımlılıkları yükleyin: `npm install`
+2. Geliştirme sunucusunu başlatın: `npm run dev`
+3. Testleri çalıştırmak için: `node scripts/testApi.js`
 
-## Deploy on Vercel
+## Notlar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Proje demo ve case study amaçlıdır. Gerçek kullanıcı kimlik doğrulama ve production veri tabanı içermez.
+- Tüm görseller ve kartlar Figma tasarımına uygun olarak örneklenmiştir.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+--

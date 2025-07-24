@@ -1,0 +1,14 @@
+{
+  "mockEnergy": 35,
+  "lastEnergyUpdate": 1753396592176,
+  "mockCardProgress": {
+    "card1": {
+      "progress": 4,
+      "level": 2
+    },
+    "card2": {
+      "progress": 10,
+      "level": 4
+    }
+  }
+}
