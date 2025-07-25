@@ -1,61 +1,75 @@
-# No Surrender: Kart Geliştirme
+# No Surrender: Card Upgrade System
 
-## Proje Amacı
+## 🎯 Project Objective
 
-Bu proje, HTML5 tabanlı bir web uygulamasında kullanıcıların çeşitli kartları (silah, kalkan, kitap vb.) seviye atlatmasını ve geliştirmesini sağlayan, oyunlaştırılmış bir sistem sunar. Kullanıcılar, enerji harcayarak kartlarının progress bar'ını doldurur, progress %100 olduğunda kart bir üst seviyeye çıkar. Enerji sınırlı olup zamanla otomatik olarak yenilenir. Amaç, kullanıcıya akıcı, performanslı ve güvenli bir geliştirme deneyimi sunmaktır.
+**No Surrender** is a gamified card upgrade system built as an HTML5-based web application. It allows users to enhance and level up various collectible cards (e.g., weapons, shields, books) by spending energy. As users interact with the system, cards progress and level up automatically once fully upgraded. Energy is limited and replenishes over time. The goal is to provide a seamless, performant, and secure user experience.
 
-## Temel Özellikler
+---
 
-- Kartlar üzerinde "Geliştir" butonu ile progress artırma
-- Her tıklamada progress %2 artar ve 1 enerji harcanır
-- Progress %100 olunca kart otomatik seviye atlar, progress sıfırlanır
-- Seviye atlamada enerji harcanmaz
-- Enerji sınırlı ve zamanla otomatik yenilenir
-- Enerji doluysa artmaz, sıfırsa butonlar disable olur
-- Kartlar seviyeye göre filtrelenebilir (tablar)
-- Kart koleksiyonu/katalog ekranı (tüm kartlar ve seviyeleri)
-- Modern ve görsel olarak zengin arayüz
-- Sunucu tarafında rate limit ve input validation ile güvenlik
-- Tüm ana API endpointleri için otomatik testler
-- Veri kalıcılığı (sunucu restart sonrası veri kaybolmaz)
+## 🚀 Features
 
-## Kullanılan Yapılar ve Teknolojiler
+- Upgrade cards with a single click using the **"Upgrade"** button
+- Each click increases card progress by **2%** and consumes **1 energy**
+- When progress reaches **100%**, the card levels up and resets progress
+- No energy is consumed during level-up
+- Energy replenishes automatically over time
+- Buttons are disabled when energy is depleted
+- Filter cards by level using **tab-based navigation**
+- Full **card collection view** with current levels
+- Modern, visually appealing UI
+- **Security** via server-side rate limiting and input validation
+- **Automated tests** for all main API endpoints
+- **Persistent data storage** across server restarts
 
-- **Next.js**: React tabanlı, SSR destekli modern web framework'ü
-- **React**: Bileşen tabanlı kullanıcı arayüzü
-- **TypeScript**: Tip güvenliği ve daha iyi geliştirme deneyimi için
-- **Tailwind CSS**: Hızlı ve modern arayüz tasarımı için utility-first CSS framework'ü
-- **Node.js (API routes)**: Sunucu tarafı iş mantığı ve veri yönetimi
-- **Dosya tabanlı mock veri**: Kalıcı veri saklama için JSON dosyası
-- **Jest benzeri test scripti (node-fetch)**: API endpointlerinin otomatik test edilmesi
-- **Figma**: UI/UX tasarım referansı
+---
 
-## Klasör Yapısı
+## 🛠️ Tech Stack
 
-- `src/pages/` : Ana sayfa, API endpointleri ve koleksiyon sayfası
-- `src/components/` : Kart, progress bar, enerji barı gibi UI bileşenleri
-- `src/data/` : Kart ve koleksiyon verileri
-- `src/lib/` : Mock veri yönetimi ve kalıcılık
-- `src/utils/` : Yardımcı fonksiyonlar
-- `scripts/` : Otomatik test scriptleri
+- **Next.js** – React framework with SSR support
+- **React** – Component-based frontend
+- **TypeScript** – Type-safe development
+- **Tailwind CSS** – Utility-first CSS framework for modern UI
+- **Node.js (API routes)** – Backend logic and data handling
+- **JSON-based mock data** – Lightweight persistence layer
+- **node-fetch** – Automated API testing
+- **Figma** – Design reference for UI/UX
 
-## Nasıl Çalışır?
+---
 
-1. Kullanıcı ana ekranda kartlarını görür, "Geliştir" butonuna tıklar.
-2. Her tıklamada progress artar, enerji harcanır. Progress %100 olunca kart seviye atlar.
-3. Enerji zamanla otomatik olarak yenilenir.
-4. Kullanıcı, üstteki "Koleksiyon" butonuyla tüm kartları ve seviyelerini görebilir.
-5. Tüm API endpointleri otomatik olarak test edilebilir.
+## 📁 Project Structure
 
-## Kurulum & Çalıştırma
+src/
+├── components/ # UI components (cards, progress bars, energy bars)
+├── data/ # Card and collection mock data
+├── lib/ # Data persistence and logic
+├── pages/ # Main page, API routes, collection page
+├── utils/ # Utility functions
+scripts/
+└── testApi.js # Automated API test script
 
-1. Bağımlılıkları yükleyin: `npm install`
-2. Geliştirme sunucusunu başlatın: `npm run dev`
-3. Testleri çalıştırmak için: `node scripts/testApi.js`
 
-## Notlar
+---
 
-- Proje demo ve case study amaçlıdır. Gerçek kullanıcı kimlik doğrulama ve production veri tabanı içermez.
-- Tüm görseller ve kartlar Figma tasarımına uygun olarak örneklenmiştir.
+## ⚙️ How It Works
 
---
+1. Users see their cards on the main screen.
+2. Clicking **"Upgrade"** increases progress and consumes energy.
+3. When progress reaches **100%**, the card levels up automatically.
+4. Energy regenerates over time.
+5. The **"Collection"** page shows all cards and their current levels.
+6. All APIs are automatically tested using a custom script.
+
+---
+
+## 🧪 Installation & Development
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Start development server
+npm run dev
+
+# 3. Run API tests
+node scripts/testApi.js
+
