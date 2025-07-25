@@ -74,10 +74,3 @@ npm run dev
 node scripts/testApi.js
 
 
-## 📝 Notes
-This project is a demo/case study and does not include real authentication or a production database.
-
-All cards and visuals are based on Figma design samples.
-
-For demonstration purposes only.
-
